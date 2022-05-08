@@ -8,8 +8,8 @@
 # 3. Shortener Viewset
 # 4. urls.py for Shortener Viewset with /encode endpoint
 # 5. HttpResponseRedirect to redirect short url to long url
-# 6. Create ViewSet for Lengthener and /decode route
-
+# 6. Create Serializer/ViewSet for Lengthener and /decode route
+# 7. Modify serializer create methods -- check if obj exists first and create only if not
 
 from django.db import models
 from .utils import BASE_URL, generate_sequence_for_short_url

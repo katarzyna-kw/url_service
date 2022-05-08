@@ -9,3 +9,12 @@ class ShortenerSerializer(serializers.ModelSerializer):
     
     long_url = serializers.URLField()
     short_url = serializers.CharField(allow_null=True, read_only=True)
+    
+    
+class LengthenerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Shortener
+        fields = ["id", "long_url", "short_url"]
+
+    long_url = serializers.URLField(allow_null=True, read_only=True)
+    short_url = serializers.CharField()

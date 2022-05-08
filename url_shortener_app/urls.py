@@ -5,6 +5,8 @@ from .views import *
 router = DefaultRouter()
 
 router.register("encode", ShortenerViewSet, basename="encode")
+router.register("decode", LengthenerViewSet, basename="decode")
+
 
 urlpatterns = [
     path("", include(router.urls)),

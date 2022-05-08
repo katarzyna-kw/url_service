@@ -1,6 +1,6 @@
 from django.http import Http404
 from .models import Shortener
-from .serializers import ShortenerSerializer
+from .serializers import LengthenerSerializer, ShortenerSerializer
 from rest_framework.viewsets import ModelViewSet
 from .utils import BASE_URL
 from django.http import HttpResponseRedirect, Http404
@@ -20,3 +20,11 @@ def redirect_to_long_url(request, short_url):
     
     except:
         raise Http404("Something went wrong. Please try again.")
+    
+    
+class LengthenerViewSet(ModelViewSet):
+    queryset = Shortener.objects.all()
+    serializer_class = LengthenerSerializer
+
+    def get_queryset(self):
+        return Shortener.objects.all().order_by("-id")
