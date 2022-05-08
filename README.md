@@ -95,6 +95,7 @@ $ (.venv) pip install --upgrade -r requirements.txt
 $ (.venv) createdb url_service_db
 ```
 
+* If you see an error message on the createdb command, PostgreSQL is not installed correctly on your system. Please download PostgreSQL and repeat Step 6 to create the database before proceeding: [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
 
 <span style="color:salmon">7.</span> Set up environmental variable secret key for Django secret key:
 
@@ -167,7 +168,7 @@ $ (.venv) python manage.py runserver
 ## Thank you for taking the time to look at my solution.
 ___
 
-## Author
+## Author Links
 
 * Portfolio - [Katarzyna Wegrzynowicz](https://katarzyna-kw.github.io/portfolio-website)
 * Github - [@katarzyna-kw](https://github.com/katarzyna-kw)
