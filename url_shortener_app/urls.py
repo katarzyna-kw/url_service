@@ -8,4 +8,5 @@ router.register("encode", ShortenerViewSet, basename="encode")
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("<str:short_url>", redirect_to_long_url),
 ]
