@@ -10,6 +10,7 @@
 # 5. HttpResponseRedirect to redirect short url to long url
 # 6. Create Serializer/ViewSet for Lengthener and /decode route
 # 7. Modify serializer create methods -- check if obj exists first and create only if not
+# 8. README file
 
 from django.db import models
 from .utils import BASE_URL, generate_sequence_for_short_url

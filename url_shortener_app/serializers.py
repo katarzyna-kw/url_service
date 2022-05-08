@@ -9,7 +9,10 @@ class ShortenerSerializer(serializers.ModelSerializer):
     
     long_url = serializers.URLField()
     short_url = serializers.CharField(allow_null=True, read_only=True)
-    
+
+    def create(self, data):
+        instance, _ = Shortener.objects.get_or_create(**data)
+        return instance
     
 class LengthenerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,3 +21,7 @@ class LengthenerSerializer(serializers.ModelSerializer):
 
     long_url = serializers.URLField(allow_null=True, read_only=True)
     short_url = serializers.CharField()
+    
+    def create(self, data):
+        instance, _ = Shortener.objects.get_or_create(**data)
+        return instance
